@@ -151,7 +151,6 @@ body{
 
     background-image: url("hero4.png");
     background-size: cover;
-    background-position: center top;
     height:90vh;
     width:100%; 
     background-position: top 25% right 0;
@@ -570,12 +569,9 @@ footer .col {
 }
 
 footer .logo {
-    margin-bottom: 30px;
-}
-
-footer .logo {
     width: 180px;
     height: auto;
+    margin-bottom: 30px;
 }
 
 footer h4 {
@@ -608,17 +604,12 @@ footer .follow i {
 footer .install .row img {
     border: 1px solid #088178;
     border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 footer .install img {
     margin: 10px 0 15px 0;
-}
-
-footer .install .row img {
-    border: 1px solid #088178;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s ease;
 }
 
 footer .install .row img:hover {
@@ -1380,16 +1371,6 @@ footer .copyright p {
         width: 70%;
     }
 
-    #form-details{
-
-        padding:40px;
-    }
-
-      #form-details form{
-
-        width:50%;
-      }
-
       /* cart page */
     #cart{
 
@@ -1458,7 +1439,7 @@ footer .copyright {
 }
 
 /******************************************************/
-/* Mobile phone view */
+/* Mobile */
 @media (max-width: 477px) {
 
     h1 {
@@ -1504,15 +1485,25 @@ footer .copyright {
         font-size: 14px;
     }
 
-    #feature {
-        justify-content: space-between;
-        margin: 0;
-    }
+   #feature {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+}
 
-    #feature .fe-box {
-        width: 155px;
-        margin: 0 0 15px 0;
-    }
+#feature .fe-box {
+    width: 100%;
+    margin: 0;
+    padding: 15px 8px;
+}
+
+#feature .fe-box img {
+    width: 100%;
+    height: auto;
+}
 
     #product1,
     #product2 {
@@ -1575,21 +1566,90 @@ footer .copyright {
         width: 100px;
     }
 
-    footer {
-        padding: 40px 20px;
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
-    footer .col {
+    footer {
+        display: flex;
+        flex-direction: column;
         width: 100%;
+        max-width: 100%;
+        padding: 30px 20px;
+        margin: 0;
+        gap: 20px;
+        overflow: hidden;
+    }
+
+    footer .col,
+    footer .col:nth-child(1),
+    footer .col:nth-child(2),
+    footer .col:nth-child(3),
+    footer .col:nth-child(4) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer .col:first-child .logo {
+        width: 150px;
+        max-width: 100%;
+        margin: 0 0 20px 0;
+        transform: none;
+    }
+
+    footer p,
+    footer a,
+    footer h4 {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    footer .install {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    footer .install .row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
     }
 
     footer .install .row img {
+        display: block;
         width: 130px;
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    footer .install > img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
     }
 
     footer .copyright {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0 0;
         text-align: center;
     }
+
 
     /*single product*/
    #prodetails{
@@ -1610,7 +1670,7 @@ footer .copyright {
         width:100%;
     }
 
-    /****************************
+    /****************************/
     /*blog*/
     #blog{
       padding:100px 20px 0 20px;
@@ -1637,28 +1697,24 @@ footer .copyright {
 
     /*************************************/
     /* about */
-    #about-head{
-       
-        flex-direction:column;
-       
-    }
+   #about-app {
+    padding: 20px;
+    text-align: center;
+}
 
-    #about-head img{
+#about-app .video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto 0;
+}
 
-        width:100%;
-        margin-bottom:20px;
-    }
-
-    #about-head div{
-
-        padding-left: 8px;
-    }
-
-    #about-app .video{
-
-        width:100%;
-       
-    }
+#about-app .video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
 
     /* contact page */
     #contact-details{
@@ -1698,15 +1754,137 @@ footer .copyright {
 
    }
 
-   #column{
-
-    width:100%;
-    
-   }
+#coupon {
+    width: 100%;
+}
 
    #subtotal{
 
     width:100%;
     padding:20px;
    }
+}
+
+/* Large tablet */
+@media (min-width: 800px) and (max-width: 1024px) {
+
+    #contact-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    #contact-details .details {
+        width: 100%;
+    }
+
+    #contact-details .map {
+        width: 100%;
+        height: 350px;
+    }
+
+    #contact-details .map iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    #form-details {
+        flex-direction: column;
+        margin: 30px 40px;
+        padding: 40px;
+        gap: 35px;
+    }
+
+    #form-details form,
+    #form-details .people {
+        width: 100%;
+    }
+}
+
+/* Small tablet */
+@media (min-width: 478px) and (max-width: 799px) {
+
+     #blog .blog-box h1 {
+        font-size: 55px;
+        top: -30px;
+    }
+
+    #blog .blog-details {
+        position: relative;
+        z-index: 1;
+        padding-left: 15px;
+    }
+
+    #contact-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    #contact-details .details,
+    #contact-details .map {
+        width: 100%;
+    }
+
+    #contact-details .map {
+        height: 350px;
+    }
+
+    #contact-details .map iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    #form-details {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 20px;
+        padding: 35px 25px;
+        gap: 35px;
+    }
+
+    #form-details form,
+    #form-details .people {
+        width: 100%;
+    }
+
+    #form-details .people div {
+        width: 100%;
+    }
+
+    footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+}
+
+footer .col {
+    min-width: 0;
+}
+
+footer .install {
+    width: 100%;
+    min-width: 0;
+}
+
+footer .install p {
+    width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+footer .install .row {
+    width: 100%;
+}
+
+footer .install .row img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+}
+
+footer .install > img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+}
 }
