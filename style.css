@@ -1172,7 +1172,7 @@ footer .copyright p {
 /**********************************************/
 /*media query*/
 /* Tablet / iPad view */
-@media (max-width: 799px) {
+@media (max-width: 1024px)  {
 
     .section-p1 {
         padding: 40px 40px;
@@ -1460,12 +1460,17 @@ footer .copyright {
         padding: 10px 30px;
     }
 
-    #hero {
-         height: 70vh;
-        padding: 0 20px;
-        background-size: cover;
-        background-position: top 0 right 35%;
+
+     #hero {
+        height: 40vh;
+        padding: 10px 20px 5px 20px;
+        background-size: 135% auto;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-color: #e3e6f3;
+        justify-content: center;
     }
+
 
     #hero h4 {
         font-size: 16px;
@@ -1571,7 +1576,6 @@ footer .copyright {
     body {
         width: 100%;
         max-width: 100%;
-        overflow-x: hidden;
     }
 
     footer {
@@ -1747,12 +1751,39 @@ footer .copyright {
             margin-bottom:30px;
     }
 
-    /* cart page */
-   #cart-add{
+       #cart {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
 
-    flex-direction:column;
+    #cart table {
+        width: 700px;
+        min-width: 700px;
+        table-layout: fixed;
+    }
 
-   }
+    #cart table td:nth-child(1) {
+        width: 80px;
+    }
+
+    #cart table td:nth-child(2) {
+        width: 100px;
+    }
+
+    #cart table td:nth-child(3) {
+        width: 220px;
+    }
+
+    #cart table td:nth-child(4),
+    #cart table td:nth-child(5),
+    #cart table td:nth-child(6) {
+        width: 100px;
+    }
 
 #coupon {
     width: 100%;
@@ -1815,6 +1846,16 @@ footer .copyright {
         padding-left: 15px;
     }
 
+      #cart {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #cart table {
+        min-width: 800px;
+    }
+
     #contact-details {
         flex-direction: column;
         align-items: flex-start;
@@ -1834,6 +1875,8 @@ footer .copyright {
         width: 100%;
         height: 100%;
     }
+
+
 
     #form-details {
         display: flex;
